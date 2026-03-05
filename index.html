@@ -1,0 +1,1218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q90s Beauty & Spa | East Legon, Ghana</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-pink: #f8c8dc;
+            --dark-pink: #e75480;
+            --light-pink: #fff0f5;
+            --gold: #d4af37;
+            --dark-text: #333;
+            --light-text: #666;
+            --white: #ffffff;
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark-text);
+            line-height: 1.6;
+            background-color: var(--white);
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            background-color: var(--primary-pink);
+            color: var(--dark-pink);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .spa-name {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--dark-pink);
+            letter-spacing: 1px;
+        }
+
+        .spa-tagline {
+            font-size: 0.9rem;
+            color: var(--light-text);
+            font-weight: 300;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav a {
+            color: var(--dark-text);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+            padding: 5px 0;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: var(--dark-pink);
+        }
+
+        nav a.active:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--dark-pink);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--dark-pink);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), 
+                        url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: var(--dark-pink);
+            letter-spacing: 1px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            color: var(--light-text);
+            font-weight: 300;
+            line-height: 1.8;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 35px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-primary {
+            background-color: var(--dark-pink);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-pink);
+            color: var(--dark-pink);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(231, 84, 128, 0.2);
+        }
+
+        /* About Section */
+        .about {
+            padding: 80px 0;
+            background-color: var(--light-pink);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: var(--dark-pink);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--gold);
+            margin: 15px auto;
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            color: var(--light-text);
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .about-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .feature-item {
+            padding: 30px 20px;
+            background-color: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+
+        .feature-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--dark-pink);
+            margin-bottom: 20px;
+        }
+
+        .feature-item h3 {
+            color: var(--dark-pink);
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 80px 0;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background-color: var(--white);
+            padding: 40px 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: var(--transition);
+            border-top: 4px solid var(--primary-pink);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            border-top-color: var(--dark-pink);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--dark-pink);
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            color: var(--dark-pink);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .service-card p {
+            color: var(--light-text);
+            margin-bottom: 20px;
+        }
+
+        /* Call to Action */
+        .cta {
+            background: linear-gradient(rgba(231, 84, 128, 0.9), rgba(231, 84, 128, 0.9)), 
+                        url('https://images.unsplash.com/photo-1560066984-138dadb4c035?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 100px 0;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--white);
+        }
+
+        .cta p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .btn-secondary {
+            background-color: var(--white);
+            color: var(--dark-pink);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--light-pink);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+        }
+
+        /* Location Section */
+        .location {
+            padding: 80px 0;
+            background-color: var(--light-pink);
+        }
+
+        .location-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .location-info h3 {
+            color: var(--dark-pink);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        .location-details {
+            margin-bottom: 30px;
+        }
+
+        .location-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+            gap: 15px;
+        }
+
+        .location-item i {
+            color: var(--dark-pink);
+            font-size: 1.2rem;
+            margin-top: 5px;
+        }
+
+        .location-item h4 {
+            color: var(--dark-pink);
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+        }
+
+        .location-item p {
+            color: var(--light-text);
+            line-height: 1.6;
+        }
+
+        .location-map {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            height: 300px;
+        }
+
+        .location-map iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Social Media Section */
+        .social-media {
+            padding: 80px 0;
+        }
+
+        .social-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .social-card {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            border-top: 4px solid var(--primary-pink);
+        }
+
+        .social-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            border-top-color: var(--dark-pink);
+        }
+
+        .social-icon {
+            font-size: 2.5rem;
+            color: var(--dark-pink);
+            margin-bottom: 20px;
+        }
+
+        .social-card h3 {
+            color: var(--dark-pink);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .social-card p {
+            color: var(--light-text);
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .social-link {
+            color: var(--dark-pink);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            color: var(--gold);
+            gap: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-pink);
+            color: var(--white);
+            padding: 50px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h4 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: var(--light-pink);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--gold);
+            padding-left: 5px;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--light-pink);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .location-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            nav ul {
+                position: fixed;
+                top: 90px;
+                left: -100%;
+                width: 100%;
+                background-color: var(--white);
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+                transition: var(--transition);
+                z-index: 999;
+            }
+
+            nav ul.active {
+                left: 0;
+            }
+
+            .hero h1 {
+                font-size: 2.3rem;
+            }
+
+            .cta h2 {
+                font-size: 2.3rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero {
+                padding: 80px 0;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Booking Modal */
+        .booking-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .booking-modal.active {
+            display: flex;
+        }
+
+        .booking-content {
+            background-color: var(--white);
+            padding: 40px;
+            border-radius: 10px;
+            max-width: 500px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        .booking-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--primary-pink);
+        }
+
+        .booking-header h3 {
+            color: var(--dark-pink);
+            font-size: 1.8rem;
+        }
+
+        .booking-close {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--light-text);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid var(--primary-pink);
+            border-radius: 5px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            transition: var(--transition);
+            background-color: var(--light-pink);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--dark-pink);
+            box-shadow: 0 0 0 3px rgba(231, 84, 128, 0.1);
+            background-color: var(--white);
+        }
+
+        textarea.form-control {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .form-success {
+            display: none;
+            background-color: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            border: 1px solid #c3e6cb;
+        }
+
+        .form-success.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-spa"></i>
+                    </div>
+                    <div class="logo-text">
+                        <div class="spa-name">Q90s BEAUTY & SPA</div>
+                        <div class="spa-tagline">East Legon, Ghana</div>
+                    </div>
+                </a>
+                
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <nav>
+                    <ul id="navMenu">
+                        <li><a href="#home" class="active">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#location">Location</a></li>
+                        <li><a href="#social">Contact</a></li>
+                        <li><a href="#" class="btn btn-primary" onclick="openBookingModal()">Book Now</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Q90s Beauty & Spa</h1>
+                <div class="hero-subtitle">Your sanctuary for beauty, wellness, and relaxation in East Legon</div>
+                <a href="#" class="btn btn-primary" onclick="openBookingModal()">Book Your Appointment</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">ABOUT US</h2>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    Our comfortable and calming atmosphere is the perfect escape from daily grind. Indulge in a day of pampering and leave feeling refreshed & rejuvenated. Trust us to take care of your beauty & wellness needs and make lasting memories with every visit.
+                </div>
+                
+                <div class="about-features">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3>Relaxing Atmosphere</h3>
+                        <p>Calm and comfortable environment for complete relaxation</p>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h3>Professional Staff</h3>
+                        <p>Skilled and certified beauty & wellness experts</p>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-spa"></i>
+                        </div>
+                        <h3>Premium Products</h3>
+                        <p>High-quality products for the best results</p>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>Personalized Care</h3>
+                        <p>Tailored treatments for your unique needs</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">OUR SERVICES</h2>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-hands"></i>
+                    </div>
+                    <h3>Massage Therapy</h3>
+                    <p>Relaxing and therapeutic massages to relieve stress and tension</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <h3>Body Massage</h3>
+                    <p>Full body treatments for complete relaxation and rejuvenation</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-smile"></i>
+                    </div>
+                    <h3>Facial Treatments</h3>
+                    <p>Rejuvenating facials for glowing, healthy skin</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-hand-sparkles"></i>
+                    </div>
+                    <h3>Pedicure & Manicure</h3>
+                    <p>Professional nail care for beautiful hands and feet</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>Lash Extensions</h3>
+                    <p>Luxurious lash extensions for stunning eyes</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <h3>Beauty Packages</h3>
+                    <p>Customized beauty packages for complete pampering</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Book Now!</h2>
+                <p>Experience the ultimate pampering session at Q90s Beauty & Spa. Your journey to relaxation and beauty begins here.</p>
+                <a href="#" class="btn btn-secondary" onclick="openBookingModal()">Book Your Appointment</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section class="location" id="location">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">OUR LOCATION</h2>
+            </div>
+            
+            <div class="location-content">
+                <div class="location-info">
+                    <h3>Visit Our Spa</h3>
+                    
+                    <div class="location-details">
+                        <div class="location-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Address</h4>
+                                <p>📍 EAST LEGON, GHANA</p>
+                            </div>
+                        </div>
+                        
+                        <div class="location-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h4>Opening Hours</h4>
+                                <p>Monday - Saturday: 9:00 AM - 7:00 PM</p>
+                                <p>Sunday: 10:00 AM - 5:00 PM</p>
+                            </div>
+                        </div>
+                        
+                        <div class="location-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Phone Number</h4>
+                                <p>0542935941</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="#" class="btn btn-primary" onclick="openBookingModal()">Book Appointment</a>
+                </div>
+                
+                <div class="location-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3970.5110360000003!2d-0.1666667!3d5.6500000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNcKwMzknMDAuMCJOIDDCsDEwJzAwLjAiVw!5e0!3m2!1sen!2sgh!4v1620000000000!5m2!1sen!2sgh" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Media Section -->
+    <section class="social-media" id="social">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">CONNECT WITH US</h2>
+            </div>
+            
+            <div class="social-content">
+                <div class="social-grid">
+                    <div class="social-card">
+                        <div class="social-icon">
+                            <i class="fab fa-snapchat"></i>
+                        </div>
+                        <h3>Snapchat</h3>
+                        <p>Follow us for daily updates and beauty tips</p>
+                        <a href="https://snapchat.com/add/mhyzz_annabel24" class="social-link" target="_blank">
+                            mhyzz_annabel24 <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="social-card">
+                        <div class="social-icon">
+                            <i class="fab fa-instagram"></i>
+                        </div>
+                        <h3>Instagram</h3>
+                        <p>See our work and client transformations</p>
+                        <a href="https://instagram.com/Q90s_beauty_spa" class="social-link" target="_blank">
+                            Q90s_beauty_spa <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="social-card">
+                        <div class="social-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <h3>Phone & WhatsApp</h3>
+                        <p>Call or message us for appointments</p>
+                        <a href="tel:+233542935941" class="social-link">
+                            0542935941 <i class="fas fa-phone"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Q90s Beauty & Spa</h4>
+                    <p>Your sanctuary for beauty, wellness, and relaxation in East Legon, Ghana.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#services">Our Services</a></li>
+                        <li><a href="#location">Location</a></li>
+                        <li><a href="#social">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> East Legon, Ghana</li>
+                        <li><i class="fas fa-phone"></i> 0542935941</li>
+                        <li><i class="fab fa-snapchat"></i> mhyzz_annabel24</li>
+                        <li><i class="fab fa-instagram"></i> Q90s_beauty_spa</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2024 Q90s Beauty & Spa. All rights reserved. | East Legon, Ghana</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Booking Modal -->
+    <div class="booking-modal" id="bookingModal">
+        <div class="booking-content">
+            <div class="booking-header">
+                <h3>Book Appointment</h3>
+                <button class="booking-close" onclick="closeBookingModal()">&times;</button>
+            </div>
+            
+            <div class="form-success" id="formSuccess">
+                Thank you for your booking request! We will contact you shortly to confirm your appointment.
+            </div>
+            
+            <form id="bookingForm">
+                <div class="form-group">
+                    <input type="text" class="form-control" id="bookingName" placeholder="Full Name" required>
+                </div>
+                
+                <div class="form-group">
+                    <input type="tel" class="form-control" id="bookingPhone" placeholder="Phone Number" required>
+                </div>
+                
+                <div class="form-group">
+                    <input type="email" class="form-control" id="bookingEmail" placeholder="Email Address">
+                </div>
+                
+                <div class="form-group">
+                    <select class="form-control" id="bookingService" required>
+                        <option value="" disabled selected>Select Service</option>
+                        <option value="massage">Massage Therapy</option>
+                        <option value="body-massage">Body Massage</option>
+                        <option value="facial">Facial Treatments</option>
+                        <option value="manicure">Pedicure & Manicure</option>
+                        <option value="lashes">Lash Extensions</option>
+                        <option value="package">Beauty Package</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <input type="date" class="form-control" id="bookingDate" required>
+                </div>
+                
+                <div class="form-group">
+                    <select class="form-control" id="bookingTime" required>
+                        <option value="" disabled selected>Preferred Time</option>
+                        <option value="9am">9:00 AM</option>
+                        <option value="10am">10:00 AM</option>
+                        <option value="11am">11:00 AM</option>
+                        <option value="12pm">12:00 PM</option>
+                        <option value="1pm">1:00 PM</option>
+                        <option value="2pm">2:00 PM</option>
+                        <option value="3pm">3:00 PM</option>
+                        <option value="4pm">4:00 PM</option>
+                        <option value="5pm">5:00 PM</option>
+                        <option value="6pm">6:00 PM</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <textarea class="form-control" id="bookingMessage" placeholder="Additional notes or special requests..."></textarea>
+                </div>
+                
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Book Appointment</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Mobile Menu Toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.querySelector('#mobileMenuBtn');
+            const navMenu = document.querySelector('#navMenu');
+            
+            if (mobileMenuBtn) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    navMenu.classList.toggle('active');
+                });
+            }
+            
+            // Close mobile menu when clicking a link
+            document.querySelectorAll('nav a').forEach(link => {
+                link.addEventListener('click', function() {
+                    navMenu.classList.remove('active');
+                });
+            });
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    if (this.getAttribute('href') === '#') return;
+                    
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        // Update active nav link
+                        document.querySelectorAll('nav a').forEach(link => {
+                            link.classList.remove('active');
+                        });
+                        this.classList.add('active');
+                        
+                        // Scroll to target
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 100,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Booking Form Submission
+            const bookingForm = document.getElementById('bookingForm');
+            const formSuccess = document.getElementById('formSuccess');
+            
+            if (bookingForm) {
+                // Set minimum date to today
+                const today = new Date().toISOString().split('T')[0];
+                document.getElementById('bookingDate').min = today;
+                
+                // Set default date to tomorrow
+                const tomorrow = new Date();
+                tomorrow.setDate(tomorrow.getDate() + 1);
+                document.getElementById('bookingDate').value = tomorrow.toISOString().split('T')[0];
+                
+                bookingForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Basic validation
+                    const name = document.getElementById('bookingName');
+                    const phone = document.getElementById('bookingPhone');
+                    const service = document.getElementById('bookingService');
+                    const date = document.getElementById('bookingDate');
+                    const time = document.getElementById('bookingTime');
+                    
+                    let isValid = true;
+                    
+                    // Reset error states
+                    [name, phone, service, date, time].forEach(field => {
+                        field.style.borderColor = '';
+                    });
+                    
+                    // Validate name
+                    if (!name.value.trim()) {
+                        name.style.borderColor = '#e75480';
+                        isValid = false;
+                    }
+                    
+                    // Validate phone
+                    const phoneRegex = /^[\d\s\-()+]+$/;
+                    if (!phone.value.trim() || !phoneRegex.test(phone.value)) {
+                        phone.style.borderColor = '#e75480';
+                        isValid = false;
+                    }
+                    
+                    // Validate service
+                    if (!service.value) {
+                        service.style.borderColor = '#e75480';
+                        isValid = false;
+                    }
+                    
+                    // Validate date
+                    if (!date.value) {
+                        date.style.borderColor = '#e75480';
+                        isValid = false;
+                    }
+                    
+                    // Validate time
+                    if (!time.value) {
+                        time.style.borderColor = '#e75480';
+                        isValid = false;
+                    }
+                    
+                    if (isValid) {
+                        // In a real application, you would send this data to your backend
+                        // For this demo, we'll just show a success message
+                        formSuccess.classList.add('active');
+                        bookingForm.reset();
+                        
+                        // Reset date to tomorrow
+                        document.getElementById('bookingDate').value = tomorrow.toISOString().split('T')[0];
+                        
+                        // Close modal after 3 seconds
+                        setTimeout(() => {
+                            closeBookingModal();
+                            formSuccess.classList.remove('active');
+                        }, 3000);
+                    }
+                });
+            }
+            
+            // Highlight active section in navigation
+            window.addEventListener('scroll', function() {
+                const sections = document.querySelectorAll('section');
+                const navLinks = document.querySelectorAll('nav a[href^="#"]');
+                
+                let currentSection = '';
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - 150;
+                    const sectionHeight = section.clientHeight;
+                    
+                    if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+                        currentSection = section.getAttribute('id');
+                    }
+                });
+                
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${currentSection}`) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+        });
+        
+        // Booking Modal Functions
+        function openBookingModal() {
+            document.getElementById('bookingModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeBookingModal() {
+            document.getElementById('bookingModal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Close modal when clicking outside
+        document.getElementById('bookingModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeBookingModal();
+            }
+        });
+        
+        // Close modal with ESC key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && document.getElementById('bookingModal').classList.contains('active')) {
+                closeBookingModal();
+            }
+        });
+    </script>
+</body>
+</html>
